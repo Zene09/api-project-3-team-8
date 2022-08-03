@@ -2,6 +2,7 @@
 This app allows you to create, view, update, like, dislike and delete blog posts. 
 You can also view and comment blog posts.
 
+testing a push
 
 ## User Stories 
 * As a user, I want to be able to create an account
