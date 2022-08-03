@@ -18,7 +18,7 @@ You can also view and comment blog posts.
 
 # Project 3 API: Blog App
 
-The back-end API for [Project Name] using an `express` auth template. This API is built off authentication and middlware boilerplates. This API along with AXIOS is used to service the client for [Project Name]. [Project Name] is a blogging app that allows users to create and log stories and share them with other users.
+The back-end API for Blog App: MMO & Co. using an `express` auth template. This API is built off authentication and middlware boilerplates. This API along with AXIOS is used to service the client for MMO & Co.. MMO & Co. is a blogging app that allows users to create and log stories and share them with other users.
 
 ## Structure
 
@@ -351,7 +351,7 @@ HTTP/1.1 204 No Content
 The blog data will be seeded.
 
 ## Entity Relationship Diagram (ERD)
-![](/Planning_Docs/ERD.png)
+![](/Planning_Docs/ERD_2.png)
 
 ## Wireframes
 ![](/Planning_Docs/project-3-wireframe.jpg)
