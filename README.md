@@ -1,4 +1,4 @@
-# Project 3 Client: Blog App
+# Project 3 Client: MMO & Co.
 This app allows you to create, view, update, like, dislike and delete blog posts. 
 You can also view and comment blog posts.
 
@@ -15,7 +15,7 @@ You can also view and comment blog posts.
 * As a user, I want to be able to like a blog
 * As a user, I want to be able to dislike a blog
 
-# Project 3 API: Blog App
+# Project 3 API: MMO & Co.
 
 The back-end API for Blog App: MMO & Co. using an `express` auth template. This API is built off authentication and middlware boilerplates. This API along with AXIOS is used to service the client for MMO & Co.. MMO & Co. is a blogging app that allows users to create and log stories and share them with other users.
 
