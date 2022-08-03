@@ -143,11 +143,11 @@ HTTP/1.1 204 No Content
 
 | Verb   | URI Pattern | Controller#Action |
 | ------ | ----------- | ----------------- |
-| GET    | `/blog/`    | `blog#index`      |
-| GET    | `/blog/:id` | `blog#show`       |
-| POST   | `/blog/`    | `blog#create`     |
-| PATCH  | `/blog/:id` | `blog#update`     |
-| DELETE | `/blog/:id` | `blog#delete`     |
+| GET    | `/blogs/`    | `blogs#index`      |
+| GET    | `/blogs/:id` | `blogs#show`       |
+| POST   | `/blogs/`    | `blogs#create`     |
+| PATCH  | `/blogs/:id` | `blogs#update`     |
+| DELETE | `/blogs/:id` | `blogs#delete`     |
 
 #### GET / INDEX
 
@@ -279,11 +279,11 @@ HTTP/1.1 204 No Content
 
 | Verb   | URI Pattern                   | Controller#Action |
 | ------ | ----------------------------- | ----------------- |
-| GET    | `/comment/:blogId`            | `comment#index`   |
-| GET    | `/comment/:blogId`            | `comment#show`    |
-| POST   | `/comment/:blogId`            | `comment#create`  |
-| PATCH  | `/comment/:blogId/:commentId` | `comment#update`  |
-| DELETE | `/comment/:blogId/:commentId` | `comment#delete`  |
+| GET    | `/comments/:blogId`            | `comments#index`   |
+| GET    | `/comments/:blogId`            | `comments#show`    |
+| POST   | `/comments/:blogId`            | `comments#create`  |
+| PATCH  | `/comments/:blogId/:commentId` | `comments#update`  |
+| DELETE | `/comments/:blogId/:commentId` | `comments#delete`  |
 
 #### POST / CREATE
 

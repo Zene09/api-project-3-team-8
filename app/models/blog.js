@@ -27,8 +27,8 @@ const blogSchema = new mongoose.Schema(
 	}
 )
 
-blogSchema.virtual('blogInfo').get(function () {
-    return `${this.title} by ${this.owner}.`
-})
+// blogSchema.virtual('blogInfo').get(function () {
+//     return `${this.title} by ${this.owner}.`
+// })
 
 module.exports = model('Blog', blogSchema)
