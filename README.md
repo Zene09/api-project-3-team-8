@@ -1,4 +1,21 @@
-# Project 3 API
+# Project 3 Client: Blog App
+This app allows you to create, view, update, like, dislike and delete blog posts. 
+You can also view and comment blog posts.
+
+## User Stories 
+* As a user, I want to be able to create an account
+* As a user, I want to be able to log into my account
+* As a user, I want to be able to log out of my account
+* As a user, I want to be able to create/add a blog.
+* As a user, I want to be able to update a blog.
+* As a user, I want to be able to delete a blog.
+* As a user, I want to be able to create/add a comment
+* As a user, I want to be able to update a comment
+* As a user, I want to be able to delete a comment
+* As a user, I want to be able to like a blog
+* As a user, I want to be able to dislike a blog
+
+# Project 3 API: Blog App
 
 The back-end API for [Project Name] using an `express` auth template. This API is built off authentication and middlware boilerplates. This API along with AXIOS is used to service the client for [Project Name]. [Project Name] is a blogging app that allows users to create and log stories and share them with other users.
 
@@ -327,3 +344,18 @@ Response:
 ```
 HTTP/1.1 204 No Content
 ```
+
+
+## Data/ Resources used
+The blog data will be seeded.
+
+## Entity Relationship Diagram (ERD)
+![](/Planning_Docs/ERD.png)
+
+## Wireframes
+![](/Planning_Docs/project-3-wireframe.jpg)
+
+## Collaborator Roles
+- Kyle Moreno: Back End
+- Lyndonna Munro: Front End 
+- Zene Orr: Team Manager
