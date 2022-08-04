@@ -53,6 +53,7 @@ POST http://localhost:8000/sign-up
 {
     "credentials": {
       "email": "an@example.email",
+      "username": "User-man",
       "password": "an example password",
       "password_confirmation": "an example password"
     }
