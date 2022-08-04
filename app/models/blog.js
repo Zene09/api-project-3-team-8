@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-// import commentSchema here
+const commentSchema = require('./comment')
 
 const { Schema, model } = mongoose
 
@@ -14,7 +14,7 @@ const blogSchema = new mongoose.Schema(
 			required: true,
 		},
         // subdoc comments
-        // comments: [commentSchema],
+        comments: [commentSchema],
 		owner: {
 			type: Schema.Types.ObjectId,
 			ref: 'User',
@@ -27,8 +27,12 @@ const blogSchema = new mongoose.Schema(
 	}
 )
 
-// blogSchema.virtual('blogInfo').get(function () {
-//     return `${this.title} by ${this.owner}.`
+// blogSchema.virtual('commentsAvail').get(function () {
+//     if (this.comments > 0) {
+//         return `This post has some comments!`
+//     } else {
+//         return `No one has commented on this post yet.`
+//     }
 // })
 
 module.exports = model('Blog', blogSchema)
