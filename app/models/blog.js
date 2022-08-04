@@ -27,12 +27,12 @@ const blogSchema = new mongoose.Schema(
 	}
 )
 
-// blogSchema.virtual('commentsAvail').get(function () {
-//     if (this.comments > 0) {
-//         return `This post has some comments!`
-//     } else {
-//         return `No one has commented on this post yet.`
-//     }
-// })
+blogSchema.virtual('commentsAvail').get(function () {
+    if (this.comments.length > 0) {
+        return `This post has some comments!`
+    } else {
+        return `No one has commented on this post yet.`
+    }
+})
 
 module.exports = model('Blog', blogSchema)
