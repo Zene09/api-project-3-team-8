@@ -13,12 +13,14 @@ const router = express.Router()
 
 // POST -> create a comment
 // POST /blogs/<comment_id>
-router.post('/comments/:blogId', requireToken, removeBlanks, (req, res, next) => {
-    req.body.comment.owner = req.user.id
+// add requireToken, and req.body.comment.owner = req.user.id
+router.post('/comments/:blogId', removeBlanks, (req, res, next) => {
+    // req.body.comment.owner = req.user.id
     const comment = req.body.comment
     const blogId = req.params.blogId
 
     Blog.findById(blogId)
+        .populate('owner')
         .then(handle404)
         .then(blog => {
             // console.log('this is the blog', blog)
@@ -40,6 +42,7 @@ router.patch('/comments/:blogId/:commentId', requireToken, removeBlanks, (req, r
     const commentId = req.params.commentId
 
     Blog.findById(blogId)
+        .populate('owner')
         .then(handle404)
         .then(blog => {
             // vvv these are subdocument methods vvv
@@ -64,6 +67,7 @@ router.delete('/comments/:blogId/:commentId', requireToken, (req, res, next) => 
     const commentId = req.params.commentId
     // then we find the unit
     Blog.findById(blogId)
+        // .populate('owner')
         // handle a 404
         .then(handle404)
         // do stuff with the stat (in this case, delete it)
