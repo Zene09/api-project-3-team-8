@@ -26,9 +26,26 @@ const startBlogs = [
 
 ]
 
+const startUser = {
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    username: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+}
+
 mongoose.connect(db, {
     useNewUrlParser: true
 })
+    // .then -> create user -> then assign owner to blogs
+        // User.create({
+        //     schema schema
+        // })
     .then(() => {
         Blog.deleteMany({ owner: null })
             .then(deletedBlogs => {
