@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const commentSchema = require('./comment')
+const likeSchema = require('./likes')
 
 const { Schema, model } = mongoose
 
@@ -15,6 +16,7 @@ const blogSchema = new mongoose.Schema(
 		},
         // subdoc comments
         comments: [commentSchema],
+		likes: [likeSchema],
 		owner: {
 			type: Schema.Types.ObjectId,
 			ref: 'User',
