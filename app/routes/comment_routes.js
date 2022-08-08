@@ -13,7 +13,8 @@ const router = express.Router()
 
 // POST -> create a comment
 // POST /blogs/<comment_id>
-router.post('/comments/:blogId', removeBlanks, (req, res, next) => {
+router.post('/comments/:blogId', requireToken, removeBlanks, (req, res, next) => {
+    req.body.comment.owner = req.user.id
     const comment = req.body.comment
     const blogId = req.params.blogId
 
