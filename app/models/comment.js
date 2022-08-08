@@ -7,6 +7,10 @@ const commentSchema = new mongoose.Schema(
             required: true,
             default: 0
         },
+        owner: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
     },
     {
     timestamps: true
@@ -14,3 +18,15 @@ const commentSchema = new mongoose.Schema(
 )
 
 module.exports = commentSchema
+
+// // {
+//     Blog: {
+        // type: Schema.Types.ObjectId,
+        // ref: 'Blog',
+//     }
+
+//     owner: {
+		// 	type: Schema.Types.ObjectId,
+		// 	ref: 'User',
+		// },
+// }
