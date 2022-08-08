@@ -1,7 +1,7 @@
 const express = require('express')
 const passport = require('passport')
 
-// pull in Mongoose model for pets
+// pull in Mongoose model for blogs
 const Blog = require('../models/blog')
 
 const customErrors = require('../../lib/custom_errors')
@@ -11,8 +11,8 @@ const removeBlanks = require('../../lib/remove_blank_fields')
 const requireToken = passport.authenticate('bearer', { session: false })
 const router = express.Router()
 
-// POST -> create a comment
-// POST /blogs/<comment_id>
+// POST -> create a like
+// POST /blogs/<like_id>
 router.post('/likes/:blogId', removeBlanks, (req, res, next) => {
     const like = req.body.like
     const blogId = req.params.blogId
@@ -21,7 +21,7 @@ router.post('/likes/:blogId', removeBlanks, (req, res, next) => {
         .then(handle404)
         .then(blog => {
             // console.log('this is the blog', blog)
-            // console.log('this is the comment', comment)
+            // console.log('this is the like', like)
 
             blog.amount.push(amount)
             return blog.save()
@@ -32,8 +32,8 @@ router.post('/likes/:blogId', removeBlanks, (req, res, next) => {
         .catch(next)
 })
 
-// UPDATE a comment
-// PATCH /comments/<blog_id>/<comment_id>
+// UPDATE a like
+// PATCH /likes/<blog_id>/<like_id>
 router.patch('/likes/:blogId/:likeId', requireToken, removeBlanks, (req, res, next) => {
     const blogId = req.params.blogId
     const likeId = req.params.likeId
@@ -42,11 +42,11 @@ router.patch('/likes/:blogId/:likeId', requireToken, removeBlanks, (req, res, ne
         .then(handle404)
         .then(blog => {
             // vvv these are subdocument methods vvv
-            // single out the comment (.id is a subdoc method to find something in an array of subdocs)
+            // single out the like (.id is a subdoc method to find something in an array of subdocs)
             const theLike = blog.likes.id(likeId)
             // make sure the user sending the request is the owner
             requireOwnership(req, blog)
-            // update the comment with a subdocument method
+            // update the like with a subdocument method
             theLike.set(req.body.like)
             // return the saved unit
             return blog.save()
@@ -55,8 +55,8 @@ router.patch('/likes/:blogId/:likeId', requireToken, removeBlanks, (req, res, ne
         .catch(next)
 })
 
-// DELETE a comment
-// DELETE /comments/<blog_id>/<comment_id>
+// DELETE a like
+// DELETE /likes/<blog_id>/<like_id>
 router.delete('/likes/:blogId/:likeId', requireToken, (req, res, next) => {
     // get the stat and the unit ids saved to variables
     const blogId = req.params.blogId
